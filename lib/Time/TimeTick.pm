@@ -8,7 +8,7 @@ use File::Basename;
 
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(timetick);   # Although we not ISA Exporter...
-our $VERSION = '0.01';
+our $VERSION = '0.02';         # Have to do this to pacify Module::Build
 
 my @Tix;           # Where we keep the time ticks
 our %Opt;          # Global option setting interface
