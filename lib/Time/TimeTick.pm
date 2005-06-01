@@ -7,8 +7,8 @@ use Exporter;
 use File::Basename;
 
 our @ISA     = qw(Exporter);
-our @EXPORT  = qw(timetick);   # Although we not ISA Exporter...
-our $VERSION = '0.02';         # Have to do this to pacify Module::Build
+our @EXPORT  = qw(timetick);   # Although we override Exporter's import()
+our $VERSION = '0.04';         # Have to do this to pacify Module::Build
 
 my @Tix;           # Where we keep the time ticks
 our %Opt;          # Global option setting interface
@@ -19,7 +19,7 @@ sub import
   my $class = shift;
   %Opt = @_;
 
-  eval { require Time::HiRes; Time::HiRes->import('time'); };
+  eval { require Time::HiRes };
   $Epoch = _current_time() if $Opt{reset_start};
 
   unless ($Opt{suppress_initial})
@@ -52,7 +52,6 @@ sub timetick
 
 sub _current_time
 {
-  return time;   # XXX
   exists &Time::HiRes::time ? Time::HiRes::time() : time;
 }
 

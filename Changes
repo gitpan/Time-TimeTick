@@ -6,3 +6,9 @@ Revision history for Perl extension Time::TimeTick.
 
 0.02  Thu Aug 12 13:07:39 PDT 2004
 	- fix incomplete MANIFEST (no tests in 0.01!)
+
+0.03 Wed Oct 20 09:15:01 PDT 2004
+	- remove XXX line left by debugging that forced integer time()
+
+0.04 Wed Jun  1 09:18:34 PDT 2005
+	- remove superfluous import().

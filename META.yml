@@ -1,13 +1,12 @@
---- #YAML:1.0
+---
 name: Time-TimeTick
-version: 0.02
+version: 0.04
 author:
   - Peter Scott, E<lt>Peter@PSDT.comE<gt>
-abstract: |-
-  Keep a tally of times at different places in your program
+abstract: Keep a tally of times at different places in your program
 license: perl
 provides:
   Time::TimeTick:
     file: lib/Time/TimeTick.pm
-    version: 0.02
-generated_by: Module::Build version 0.25
+    version: 0.04
+generated_by: Module::Build version 0.261
