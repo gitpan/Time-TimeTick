@@ -8,7 +8,7 @@ use File::Basename;
 
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(timetick);   # Although we override Exporter's import()
-our $VERSION = '0.04';         # Have to do this to pacify Module::Build
+our $VERSION = '0.06';
 
 my @Tix;           # Where we keep the time ticks
 our %Opt;          # Global option setting interface
@@ -210,13 +210,19 @@ package name.
 =head1 EXAMPLE
 
   use Time::TimeTick suppress_initial => 1;
-  # ... time passes
+  # ... picture intervening lines of code
   timetick("Phase 2");
-  # ... more time passes, program ends
+  # ... picture more code
+  timetick("Phase 3");
+  # ... and yet more
+  timetick("Phase 4");
+  # Some time later, the program ends
 
 Output from C<Time::TimeTick>:
 
   0.7524 Phase 2
+  0.7945 Phase 3
+  0.8213 Phase 4
   0.8328 Timeticker for testprog finishing
 
 =head1 AUTHOR

@@ -12,3 +12,6 @@ Revision history for Perl extension Time::TimeTick.
 
 0.04 Wed Jun  1 09:18:34 PDT 2005
 	- remove superfluous import().
+
+0.05 Wed Jun  1 15:55:04 PDT 2005
+	- increase length of example per user suggestion

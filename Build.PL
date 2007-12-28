@@ -4,4 +4,5 @@ use Module::Build;
 Module::Build->new
     ( module_name     => 'Time::TimeTick',
       license         => 'perl',
-    )->create_build_script;
+      dist_version_from => 'lib/Time/TimeTick.pm',
+   )->create_build_script;

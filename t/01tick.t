@@ -3,7 +3,6 @@ use strict;
 use warnings;
 
 use Test::More tests => 3;
-use Test::Exception;
 use blib;
 
 my $capture;
@@ -45,6 +44,14 @@ END
 
 BEGIN { use_ok("Time::TimeTick") }
 
-lives_ok { timetick("TEST"); }
+my $t_e_installed;
+BEGIN {
+  $t_e_installed = eval 'require Test::Exception' and Test::Exception->import;
+}
+
+SKIP: {
+  $t_e_installed or timetick("TEST"), skip "Test::Exception not installed", 1;
+  lives_ok { timetick("TEST") }
+}
 
 
